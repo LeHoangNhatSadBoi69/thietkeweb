@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>LeHoangNhat-1812814</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    //lay du lieu dau vao
+    var rng = prompt('Enter the range');
+
+    // kiem tra du lieu dau vao
+    var res = rng.split("-");
+    if (res.length != 2) {
+    alert("invalid range please input acroding to the format : *-* ");
+    return;
+    }
+     first = parseInt(res[0]);
+    second = parseInt(res[1]);
+    if (first > second) {
+    alert("invalid range the fist number cant be bigger the the second ");
+    return;
+    }
+
+    //tinh toan
+    str = "<table border=2><tr><th>Number</th><th>Square</th><th>Cube</th></tr>";
+    for (i = first; i <= second; i++) {
+    str = str + "<tr><td>" + i + "<td>" + (i * i) + "<td>" + (i * i * i);
+    }
+
+    //xuat ket qua ra man hinh chinh
+    document.write(str);
+});
+</script>
+<body>
+</body>
+</html>

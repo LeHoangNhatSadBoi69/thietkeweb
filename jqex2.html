@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+<title>LeHoangNhat-1812814</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script>
+    function findLMV() {
+
+     //lay du lieu dau vao
+    var str = document.getElementById('t1').value
+
+    // kiem cac nguyen am tu du lieu da nhap
+    for (i = 0; i < str.length; i++) {
+    if (str.charAt(i) == 'a' || str.charAt(i) == 'e'
+    || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u')
+
+    // xuat ra ket qua
+    return ("Left most vowel of " + str + " is at location " + (i + 1));
+    }
+    return ("No vowels found for string " + str);
+    }
+    
+    function reverse(num) {
+    rnum = 0;
+    temp = num;
+
+    // kiem tra du lieu dau vao co phai la so hay ko
+    if (isNaN(num)) {
+    return "invalid number";
+    }
+
+    // xu ly du lieu dau vao
+    while (num != 0) {
+    rnum *= 10;
+    rnum += num % 10;
+    num -= num % 10;
+    num = Math.floor(num / 10);
+    }
+    
+    //xuat ra ket qua
+    return "Reverse of num " + temp + " is " + rnum;
+   }
+ </script>
+</head>
+<body>
+ <section>
+ <h1>Finding left most vowel</h1>
+ <p>Enter a string: <input type="text" id="t1"></p>
+ <input type="button" value="find" onclick="alert(findLMV())">
+ </section>
+ <hr>
+ <section>
+ <h1>Reverse of a number</h1>
+ <p>Enter a number: <input type="text" id="t2"></p>
+ <input type="button" value="reverse"
+onclick="alert(reverse(document.getElementById('t2').value))">
+ </section>
+</body>
+</html>
